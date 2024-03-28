@@ -1,0 +1,207 @@
+/*
+
+
+## Colors
+
+### Primary
+
+- Red: hsl(0, 100%, 74%) 
+- Green: hsl(154, 59%, 51%)
+
+### Accent
+
+- Blue: hsl(248, 32%, 49%)
+
+### Neutral
+
+- Dark Blue: hsl(249, 10%, 26%) 
+- Grayish Blue: hsl(246, 25%, 77%)
+
+## Typography
+
+### Body Copy
+
+- Font size: 16px
+
+### Font
+
+- Family: [Poppins](https://fonts.google.com/specimen/Poppins)
+- Weights: 400, 500, 600, 700
+
+
+*/
+
+:root {
+  --red: hsla(0, 100%, 74%, 0.8);
+  --green: hsl(154, 59%, 51%);
+
+  --blue: hsl(248, 32%, 49%);
+  --dark-blue: hsl(249, 10%, 26%);
+  --grayish-blue: hsl(246, 25%, 77%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(./images/bg-intro-desktop.png);
+  background-color: var(--red);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  gap: 5rem;
+}
+
+.container .left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2.5rem;
+  max-width: 500px;
+}
+
+.container .left h1 {
+  color: white;
+  font-weight: 700;
+  font-size: 3rem;
+}
+
+.container .left p {
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.container .right {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+}
+
+.container .right h3 {
+  color: white;
+  font-size: 16px;
+  border-radius: 0.5rem;
+  background-color: var(--blue);
+  padding: 1rem 3rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.container .right h3 span {
+  color: var(--grayish-blue);
+  font-size: 16px;
+}
+
+.container .right .input {
+  background-color: white;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2.5rem 2rem;
+}
+
+.container .right .input input {
+  border: 0.1px solid var(--grayish-blue);
+  border-radius: 0.25rem;
+  color: var(--grayish-blue);
+  font-weight: 600;
+  padding: 1rem;
+  width: 100%;
+  margin-bottom: 1.25rem;
+}
+
+.container .right .input input:focus {
+  outline: none !important;
+}
+
+.container .right .input input::placeholder {
+  color: var(--dark-blue);
+  font-weight: 500;
+}
+
+.container .right .input button {
+  background-color: var(--green);
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+  letter-spacing: 0.25rem;
+  margin-bottom: 1rem;
+  padding: 1.5rem 3rem;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.container .right .input button:focus {
+  outline: none;
+}
+
+.container .right .input h5 {
+  color: var(--grayish-blue);
+  text-align: center;
+  font-size: 13px;
+  margin-bottom: 1rem;
+}
+
+.container .right .input h5 span {
+  color: var(--red);
+  font-weight: 700;
+}
+
+.error {
+  border: 2px solid var(--red);
+  background-color: url("../images/icon-error.svg") no-repeat;
+  background-position: 95% 50%;
+}
+
+.error-text {
+  font-size: 12px;
+  font-style: italic;
+  margin-left: auto;
+  margin-top: -15px;
+  margin-bottom: 20px;
+  color: var(--red);
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    background-image: url(./images/bg-intro-mobile.png);
+    background-color: var(--red);
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .container .left,
+  .container .right {
+    max-width: none;
+    width: 100%;
+  }
+
+  .container .right h3 {
+    padding: 1rem 2rem;
+  }
+
+  .container .right .input {
+    padding: 2rem 1rem;
+  }
+}
